@@ -64,3 +64,90 @@ climate_change_df.head()
 ![Data_Analysis](https://github.com/user-attachments/assets/9f063b4f-4f26-41fb-894f-b9993303ea69)
 
 
+
+###  Data Inspection(check for missing values)
+'''python
+climate_change_df.isna().any()
+'''
+![Data_Inspection](https://github.com/user-attachments/assets/c3c86107-3ec8-4467-9c0a-ddaae1675347)
+
+## counting the number of missing values
+'''python
+climate_change_df.shape
+climate_change_df.isna().sum()
+'''
+![Data_MissingValues](https://github.com/user-attachments/assets/2276cd73-5657-4ce4-8fe2-33ce58dba917)
+
+
+### Data Cleaning (handling missing values)
+'''python
+climate_change_df.mode()
+
+climate_change_df["co2"].mean()
+
+# filling the missing value with the mean value 352.32 on the column
+climate_change_df = climate_change_df.fillna(352.32)
+climate_change_df.head()
+
+# Checking if all Missing Values have been replaced by the Mean
+climate_change_df.isna().any()
+'''
+![Data_Cleaning](https://github.com/user-attachments/assets/5134de45-3be9-4634-b8d7-08ae5d8fa87d)
+![Data_Mean](https://github.com/user-attachments/assets/3a15318e-fc93-4212-ae8b-ec57aee9da8d)
+![Data_Analysis3](https://github.com/user-attachments/assets/315d3571-e4e8-45bc-b037-3a59f86f3551)
+![Data_Corr_Confirmation](https://github.com/user-attachments/assets/73d78712-381f-4c62-a345-a4b660d88a38)
+
+
+### Data Visualization
+'''python
+#Solution
+
+#Importing Matplotlib
+
+import matplotlib.pyplot as plt
+
+
+#Creating The Plot
+
+fig, ax = plt.subplots()
+
+
+ax.plot(climate_change_df.index, climate_change_df["co2"], color = "red")
+
+
+ax.set_xlabel("Time")
+
+ax.set_ylabel("co2(part per million)")
+
+fig.suptitle("Co2 Emission Due to Climate Change")
+
+plt.show()
+'''
+![Data_plot](https://github.com/user-attachments/assets/b1c0f8d2-032b-4e62-9c46-a9276d062d7b)
+
+
+###  Data Interpretation
+### Key Findings
+-**Steady Increase**: CO₂ levels rose from approximately 315 ppm in 1958 to over 403 ppm by 2016.
+
+-**Seasonal Patterns**: A regular saw-tooth pattern was observed, corresponding to seasonal plant activity (photosynthesis cycles).
+
+-**Acceleration in Emissions**: Linear curve indicates steady growth and increasing acceleration in emissions, especially post-2000.
+
+### Conclusion
+-The findings of this study provide compelling evidence of the dramatic rise in atmospheric CO₂ over the last half-century.
+
+-While natural seasonal variations exist, the long-term upward trend is unmistakably driven by industrialization, fossil fuel combustion, and land-use changes. 
+
+-These results underscore the urgency for global climate mitigation strategies and support the scientific consensus on anthropogenic climate change.
+
+### Recommendations
+-I strongly reconmmend  the global adoption of renewable energy sources.
+
+-I strongly reconmmend the Promotion of  global CO₂ emission monitoring for real-time policy response.
+
+-I strongly reconmmend that this  findings should be used as part of educational material in environmental science curricula.
+
+-I strongly reconmmend the Extension of this  study to include temperature anomaly data for correlation analysis.
+
+## ------THE ENDS--------
